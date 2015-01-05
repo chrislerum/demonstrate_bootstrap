@@ -1,0 +1,9 @@
+// "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
+@import "bootstrap-sprockets";
+
+// examples of setting variables before importing bootstrap, so they're picked up
+//$navbar-default-bg: #312312;
+//$light-orange: #ff8c00;
+//$navbar-default-color: $light-orange;
+
+@import "bootstrap-custom";
