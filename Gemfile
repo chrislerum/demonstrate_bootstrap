@@ -13,7 +13,7 @@ gem 'bootstrap-sass', '~> 3.3.1'
 gem 'autoprefixer-rails'
 
 group :test do
-    gem 'shoulda-matchers'
+  gem 'shoulda-matchers'
 end
 
 group :development, :test do
