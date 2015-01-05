@@ -11,6 +11,11 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'slim-rails'
 gem 'bootstrap-sass', '~> 3.3.1'
 gem 'autoprefixer-rails'
+
+group :test do
+    gem 'shoulda-matchers'
+end
+
 group :development, :test do
   gem 'rspec-rails', '~> 2.0'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
