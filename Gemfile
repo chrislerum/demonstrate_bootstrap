@@ -14,9 +14,12 @@ gem 'autoprefixer-rails'
 
 group :test do
   gem 'shoulda-matchers'
+  gem 'cucumber-rails', require: false
+  gem 'database_cleaner'
 end
 
 group :development, :test do
+  gem 'factory_girl_rails'
   gem 'rspec-rails', '~> 2.0'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
