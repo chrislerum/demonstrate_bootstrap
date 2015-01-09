@@ -5,3 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+puts 'SEEDS!'
+bottles = Bottle.create!([
+  {name: 'Pink Bottle', color: 'Pink'},
+  {name: 'Blue Bottle', color: 'Blue'},
+  {name: 'Red Bottle', color: 'Red'}
+])
