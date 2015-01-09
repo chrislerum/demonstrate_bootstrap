@@ -9,5 +9,10 @@ puts 'SEEDS!'
 bottles = Bottle.create!([
   {name: 'Pink Bottle', color: 'Pink'},
   {name: 'Blue Bottle', color: 'Blue'},
+  {name: 'Rose Bottle', color: 'Rose'},
+  {name: 'Rose Bottle', color: 'Rose'},
+  {name: 'Rose Bottle', color: 'Rose'},
+  {name: 'Rose Bottle', color: 'Rose'},
+  {name: 'Rose Bottle', color: 'Rose'},
   {name: 'Red Bottle', color: 'Red'}
 ])
