@@ -25,6 +25,7 @@ group :development do
   gem 'guard-rails'
   gem 'guard-rspec'
   gem 'guard-cucumber'
+  gem 'faker'
 end
 
 group :development, :test do
