@@ -21,6 +21,12 @@ group :test do
   gem 'launchy'
 end
 
+group :development do
+  gem 'guard-rails'
+  gem 'guard-rspec'
+  gem 'guard-cucumber'
+end
+
 group :development, :test do
   gem 'factory_girl_rails'
   gem 'rspec-rails', '~> 3.0'
