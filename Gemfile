@@ -15,8 +15,8 @@ gem 'awesome_print'
 
 group :test do
   gem 'shoulda-matchers'
-  gem 'cucumber-rails', require: false
   gem 'database_cleaner'
+  gem 'capybara'
   gem 'selenium-webdriver'
   gem 'launchy'
 end
@@ -24,7 +24,6 @@ end
 group :development do
   gem 'guard-rails'
   gem 'guard-rspec'
-  gem 'guard-cucumber'
   gem 'faker'
 end
 
