@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 puts 'SEEDS!'
 Bottle.destroy_all
-for x in 1..20 do
+for x in 1..18 do
   bottles = Bottle.create!({
     name: Faker::App.name,
     color: Faker::Commerce.color.capitalize
