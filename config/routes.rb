@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root 'bottles#index'
-  get 'bottles' => 'bottles#index'
+  resources :bottles
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
