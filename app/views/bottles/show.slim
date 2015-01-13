@@ -1,2 +1,15 @@
-= @bottle.name
-= "Color: #{@bottle.color}"
+.page-header
+  h1
+   | This Bottle
+   small
+     = @bottle.name
+.row
+  .col-xs-6.col.md-3
+    .thumbnail
+      = image_tag "only_for_development/bottle#{@bottle.id}.jpg"
+      .caption
+        span.name= @bottle.name
+        br
+        ' Color:
+        span
+          = @bottle.color
