@@ -12,6 +12,7 @@ gem 'slim-rails'
 gem 'bootstrap-sass', '~> 3.3.1'
 gem 'autoprefixer-rails'
 gem 'awesome_print'
+gem 'devise'
 
 group :test do
   gem 'shoulda-matchers'
