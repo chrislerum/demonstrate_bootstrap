@@ -29,4 +29,5 @@ guard :rspec, cmd: "spring rspec", all_on_start: true, all_after_pass: true do
   watch(rails.routes)          { "#{rspec.spec_dir}/routing" }
   watch(rails.app_controller)  { "#{rspec.spec_dir}/controllers" }
   watch(rails.view_dirs)     { |m| "#{rspec.spec_dir}/features" }
+  watch(/^spec\/factories\/.+\.rb/)     { 'spec' }
 end
