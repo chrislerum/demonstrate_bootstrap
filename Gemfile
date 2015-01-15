@@ -16,7 +16,7 @@ gem 'dragonfly', '~> 1.0.7'
 gem 'devise'
 
 group :test do
-  #gem 'database_cleaner'
+  gem 'shoulda-matchers', require: false
   gem 'capybara'
   gem 'selenium-webdriver'
   gem 'launchy'
@@ -30,7 +30,6 @@ group :development do
 end
 
 group :development, :test do
-  gem 'shoulda-matchers'
   gem "rb-fsevent" if `uname` =~ /Darwin/
   gem 'quiet_assets'
   gem 'factory_girl_rails'
