@@ -3,10 +3,10 @@
     .col-xs-6.col-md-3
       =link_to bottle, id: bottle.name.downcase do
         .thumbnail
-          = image_tag "only_for_development/bottle#{i + 1}.jpg"
+          =image_tag "only_for_development/bottle#{i + 1}.jpg"
           .caption
-            span.name= bottle.name
+            span.name=bottle.name
             br
             ' Color:
             span
-              = bottle.color
+              =bottle.color
