@@ -12,10 +12,10 @@ gem 'slim-rails'
 gem 'bootstrap-sass', '~> 3.3.1'
 gem 'autoprefixer-rails'
 gem 'awesome_print'
+gem 'dragonfly', '~> 1.0.7'
 gem 'devise'
 
 group :test do
-  gem 'shoulda-matchers'
   #gem 'database_cleaner'
   gem 'capybara'
   gem 'selenium-webdriver'
@@ -26,9 +26,12 @@ group :development do
   gem 'guard-rails'
   gem 'guard-rspec'
   gem 'faker'
+  gem "spring-commands-rspec"
 end
 
 group :development, :test do
+  gem 'shoulda-matchers'
+  gem "rb-fsevent" if `uname` =~ /Darwin/
   gem 'quiet_assets'
   gem 'factory_girl_rails'
   gem 'rspec-rails', '~> 3.0'
