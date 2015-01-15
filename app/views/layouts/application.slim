@@ -2,12 +2,10 @@ doctype html
 html
   head
     title DemonstrateBootstrap
-    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
-    = javascript_include_tag 'application', 'data-turbolinks-track' => true
-    = csrf_meta_tags
+    =stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    =javascript_include_tag 'application', 'data-turbolinks-track' => true
+    =csrf_meta_tags
   body
-    p.notice= notice
-    p.alert= alert
     nav.navbar.navbar-default.navbar-fixed-top.navbar-inverse
       .container-fluid
       .navbar-header
@@ -17,12 +15,20 @@ html
           span.icon-bar
           span.icon-bar
         = link_to 'Bottles, Baby!', root_path, {class: 'navbar-brand'}
-      .collapse.navbar-collapse id= "bs-example-navbar-collapse-1"
+      .collapse.navbar-collapse id="bs-example-navbar-collapse-1"
         ul.nav.navbar-nav
-          li.active
-            = link_to 'Sign Up', new_user_registration_path
+            -if !current_user
+              li.active
+                = link_to 'Sign Up', new_user_registration_path
+              li.active
+                = link_to 'Sign In', new_user_session_path
+            -else
+              li.active
+                = link_to 'Sign Out', destroy_user_session_path, method: :delete
     .container
-      = yield
+      p.notice=notice
+      p.alert=alert
+      =yield
     footer.footer
       .container
         p.text-muted Copyright 2015 RoamingDog LLC
