@@ -1,16 +1,8 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
-require 'faker'
 puts 'SEEDS!'
 Bottle.destroy_all
-for x in 1..18 do
+(1..18).each_with_index do |thing, i|
   bottles = Bottle.create!({
-    name: Faker::App.name,
-    color: Faker::Commerce.color.capitalize
+    name: "Bottle #{i + 1}",
+    color: ['Red', 'Green', 'Blue', 'Black'].sample
   })
 end
