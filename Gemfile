@@ -33,7 +33,7 @@ end
 
 group :development, :test do
   gem 'database_cleaner'
-  gem "rb-fsevent" if `uname` =~ /Darwin/
+  gem "rb-fsevent"# if `uname` =~ /Darwin/
   gem 'quiet_assets'
   gem 'factory_girl_rails'
   gem 'rspec-rails', '~> 3.0'
