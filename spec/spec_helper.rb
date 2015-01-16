@@ -1,4 +1,5 @@
 require 'shoulda-matchers'
+Capybara.javascript_driver = :webkit
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true
@@ -32,12 +33,18 @@ def pageme
   save_and_open_page
 end
 
-def sign_up_user(password: 'happy555')
-  user = FactoryGirl.create(:user, password: password)
+def screenshot
+  save_and_open_screenshot
+end
+
+def signed_up_user(password: 'happy555')
+  user = FactoryGirl.build(:user, password: password)
   visit root_path
   within '.navbar' do
     click_link 'Sign Up'
   end
+  fill_in 'First name', with: user.first_name
+  fill_in 'Last name', with: user.last_name
   fill_in 'Email', with: user.email
   fill_in 'Password', with: password
   fill_in 'Password confirmation', with: password
@@ -45,6 +52,7 @@ def sign_up_user(password: 'happy555')
   user
 end
 
-def sign_in_user(email:, password:)
-
+def sign_out_user
+  visit root_path
+  click_link 'Sign Out'
 end
