@@ -16,6 +16,7 @@ gem 'autoprefixer-rails'
 gem 'awesome_print'
 gem 'dragonfly', '~> 1.0.7'
 gem 'devise'
+gem 'sidekiq'
 
 group :test do
   gem 'shoulda-matchers', require: false
