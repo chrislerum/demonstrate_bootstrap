@@ -3,6 +3,6 @@ class Bottle < ActiveRecord::Base
 
 
   def self.do_the_work(num1, num2)
-    CalculatorWorker.perform_async(num1, num2)
+    #CalculatorWorker.perform_async(num1, num2)
   end
 end
