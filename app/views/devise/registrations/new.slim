@@ -13,17 +13,13 @@ h2 Sign up
     span.input-group-addon id="basic-addon1" Email Address
     =f.email_field :email, class: 'form-control', placeholder: 'Email Address'
   br
-  .input-group.input-group-lg
-    span.input-group-addon id="basic-addon1"
+  .input-group.input-group-lg id='password'
+    span.input-group-addon
       'Password
-      -if @validatable
-        |(
-        em=@minimum_password_length
-        |characters minimum)
     =f.password_field :password, autocomplete: "off", class: 'form-control'
   br
-  .input-group.input-group-lg
-    span.input-group-addon id="basic-addon1"
+  .input-group.input-group-lg id="password_confirmation"
+    span.input-group-addon
       |Password Confirmation
     =f.password_field :password, autocomplete: "off", class: 'form-control'
   br

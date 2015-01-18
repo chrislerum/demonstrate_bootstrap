@@ -43,11 +43,15 @@ def signed_up_user(password: 'happy555')
   within '.navbar' do
     click_link 'Sign Up'
   end
-  fill_in 'First name', with: user.first_name
-  fill_in 'Last name', with: user.last_name
-  fill_in 'Email', with: user.email
-  fill_in 'Password', with: password
-  fill_in 'Password confirmation', with: password
+  fill_in 'First Name', with: user.first_name
+  fill_in 'Last Name', with: user.last_name
+  fill_in 'Email Address', with: user.email
+  within '#password' do
+    fill_in 'user_password', with: password
+  end
+  within '#password_confirmation' do
+    fill_in 'user_password', with: password
+  end
   click_button 'Sign up'
   user
 end
