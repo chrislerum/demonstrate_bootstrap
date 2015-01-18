@@ -10,6 +10,8 @@ feature "User registration" do
     expect(page).to have_content 'Password Confirmation'
     fill_in 'First Name', with: first_name
     fill_in 'Last Name', with: last_name
+    the_now = (Date.today - 30.years)
+    fill_in 'Date of Birth', with: the_now
     fill_in 'Email Address', with: 'hellothere@gmail.com'
     within '#password' do
       fill_in 'user_password', with: password
@@ -20,9 +22,33 @@ feature "User registration" do
     click_button 'Sign up'
 
     expect(page).to have_content 'You have signed up successfully.'
+    expect(page).to have_content "#{first_name} #{last_name}"
+    expect(page).to have_content the_now.to_s(:long)
     within '.navbar' do
       expect(page).to have_link 'Sign Out'
     end
+  end
+
+  scenario "User cannot sign up if under 21", js: true do
+    first_name, last_name, password = 'Henry', 'Talbot', 'happyface'
+    visit root_path
+    within '.navbar' do
+      click_link 'Sign Up'
+    end
+    fill_in 'First Name', with: first_name
+    fill_in 'Last Name', with: last_name
+    the_now = (Date.today - 10.years)
+    fill_in 'Date of Birth', with: the_now
+    fill_in 'Email Address', with: 'hellothere@gmail.com'
+    within '#password' do
+      fill_in 'user_password', with: password
+    end
+    within '#password_confirmation' do
+      fill_in 'user_password', with: password
+    end
+    click_button 'Sign up'
+
+    expect(page).to have_content "Sorry, mate, you're not old enough for these bottles."
   end
 
   scenario "User signs in to account and sees his name", js: true do
@@ -39,6 +65,5 @@ feature "User registration" do
     end
     click_button 'Sign in'
     expect(page).to have_content 'Signed in successfully.'
-    expect(page).to have_content "#{user.first_name} #{user.last_name}"
   end
 end

@@ -20,14 +20,20 @@ html
             -if !current_user
               li.active
                 = link_to 'Sign Up', new_user_registration_path
-              li.active
-                = link_to 'Sign In', new_user_session_path
+              -if signed_in?
+                li.active
+                  = link_to 'Sign In', new_user_session_path
+              -else
+                li
+                  = link_to 'Sign In', new_user_session_path
             -else
               li.active
                 = link_to 'Sign Out', destroy_user_session_path, method: :delete
           p.navbar-text.navbar-right#user-info
             -if user_signed_in?
-              =current_user.full_name
+              =>current_user.full_name
+              ', Born:
+              = current_user.dob? && current_user.dob.to_s(:long)
           ul.nav.navbar-nav.navbar-right
             li
               a href="#"
