@@ -18,12 +18,7 @@ guard :rspec, cmd: "spring rspec", all_on_start: true, all_after_pass: true do
   dsl.watch_spec_files_for(rails.app_files)
   dsl.watch_spec_files_for(rails.views)
 
-  watch(rails.controllers) do |m|
-    [
-      rspec.spec.("routing/#{m[1]}_routing"),
-      rspec.spec.("controllers/#{m[1]}_controller")
-    ]
-  end
+  watch(rails.controllers) { 'spec' }
 
   watch(rails.spec_helper)     { rspec.spec_dir }
   watch(rails.routes)          { "#{rspec.spec_dir}/routing" }
