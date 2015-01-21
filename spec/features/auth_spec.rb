@@ -23,7 +23,6 @@ feature "User registration" do
 
     expect(page).to have_content 'You have signed up successfully.'
     expect(page).to have_content "#{first_name} #{last_name}"
-    expect(page).to have_content the_now.to_s(:long)
     within '.navbar' do
       expect(page).to have_link 'Sign Out'
     end

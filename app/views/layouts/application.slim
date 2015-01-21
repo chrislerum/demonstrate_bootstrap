@@ -32,8 +32,6 @@ html
           p.navbar-text.navbar-right#user-info
             -if user_signed_in?
               =>current_user.full_name
-              ', Born:
-              = current_user.dob? && current_user.dob.to_s(:long)
           ul.nav.navbar-nav.navbar-right
             li
               a href="#"
