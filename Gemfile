@@ -17,7 +17,6 @@ gem 'awesome_print'
 gem 'dragonfly', '~> 1.0.7'
 gem 'devise'
 gem 'sidekiq'
-
 group :test do
   gem 'shoulda-matchers', require: false
   gem 'capybara'
@@ -25,25 +24,19 @@ group :test do
   gem 'selenium-webdriver'
   gem 'launchy'
 end
-
 gem 'rails_12factor', group: :production
-
 group :development do
   gem 'guard-rails'
   gem 'guard-rspec'
   gem "spring-commands-rspec"
 end
-
 group :development, :test do
   gem 'database_cleaner'
-  gem "rb-fsevent"# if `uname` =~ /Darwin/
+  gem "rb-fsevent"
   gem 'quiet_assets'
   gem 'factory_girl_rails'
   gem 'rspec-rails', '~> 3.0'
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
-  # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
