@@ -55,7 +55,8 @@ end
 def sign_out_user
   visit root_path
   begin
-  click_link 'Sign Out'
+    click_link 'Sign Out'
   rescue
+    puts 'Fail'
   end
 end

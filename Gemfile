@@ -17,6 +17,8 @@ gem 'awesome_print'
 gem 'dragonfly', '~> 1.0.7'
 gem 'devise'
 gem 'sidekiq'
+gem 'lograge'
+
 group :test do
   gem 'shoulda-matchers', require: false
   gem 'capybara'
@@ -28,11 +30,11 @@ gem 'rails_12factor', group: :production
 group :development do
   gem 'guard-rails'
   gem 'guard-rspec'
-  gem "spring-commands-rspec"
+  gem 'spring-commands-rspec'
 end
 group :development, :test do
   gem 'database_cleaner'
-  gem "rb-fsevent"
+  gem 'rb-fsevent'
   gem 'quiet_assets'
   gem 'factory_girl_rails'
   gem 'rspec-rails', '~> 3.0'

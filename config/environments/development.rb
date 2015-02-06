@@ -1,4 +1,8 @@
 Rails.application.configure do
+  config.lograge.enabled = true
+  config.lograge.custom_options = lambda do |event|
+    {:time => event.time}
+  end
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on
